@@ -30,4 +30,4 @@ spec:
     spec:
       containers:
       - name: con-front
-        image: yeso1/spring:10
+        image: yeso1/spring:11
