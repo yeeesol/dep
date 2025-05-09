@@ -8,7 +8,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: front
+    app: sb-app
   ports:
   - port: 80
     targetPort: 8085
@@ -16,18 +16,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dep-front
+  name: dep-sb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: front
+      app: sb-app
   template:
     metadata:
-      name: pod-front
+      name: pod-sb
       labels:
-        app: front
+        app: sb-app
     spec:
       containers:
-      - name: con-front
+      - name: con-sb
         image: yeso1/spring:11
